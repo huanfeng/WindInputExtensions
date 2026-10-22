@@ -1,0 +1,28 @@
+[workspace]
+resolver = "3"
+members = ["keysound"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "GPL-3.0-or-later"
+
+[workspace.dependencies]
+# 协议的消息与帧定义，与输入法核心共用一份。开发期按平级目录引用 WindInput 仓。
+wind-hook = { path = "../WindInput/wind_input/crates/wind-hook" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+toml = "0.8"
+windows = "0.58"
+
+[workspace.lints.clippy]
+dbg_macro = "deny"
+todo = "deny"
+unimplemented = "deny"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true
+panic = "abort"
