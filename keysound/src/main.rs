@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MPL-2.0
 //! 按键音扩展（扩展程序示例）。由扩展宿主在扩展目录下拉起，stdin 收事件、stdout 发握手，
 //! stderr 进宿主写的扩展日志。stdin EOF（宿主退出或停用本扩展）即退出。
 //!

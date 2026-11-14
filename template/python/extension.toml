@@ -1,0 +1,7 @@
+# SPDX-License-Identifier: MIT
+name = "我的扩展"
+# 需要把 Python 解释器放进扩展目录，或用 PyInstaller 等打成 exe 后改成 exe = "myext.exe"。
+exe = "python.exe"
+args = ["main.py"]
+want = ["key.class"]   # 申请的授权档位，只写用得到的
+protocol = [1]

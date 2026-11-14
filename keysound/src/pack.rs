@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MPL-2.0
 //! 音效包：扩展目录 `packs/<名字>/` 下的一组 WAV（16 位 PCM），按文件名分组。
 //!
 //! 文件名去掉扩展名、再去掉末尾的 `-数字` 就是组名：`default-1.wav`、`default-2.wav` 同属

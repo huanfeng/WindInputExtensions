@@ -46,5 +46,12 @@ extensions/keysound/
 
 ## 许可
 
-GPL-3.0-or-later，见 [LICENSE](LICENSE)。**例外：扩展程序协议文档 [docs/protocol.md](docs/protocol.md) 采用 MPL-2.0**，见 [docs/LICENSE-MPL-2.0](docs/LICENSE-MPL-2.0)。各扩展附带素材的来源与许可见其目录下的说明
-（如 [keysound/packs/README.md](keysound/packs/README.md)）。
+按目录分别声明，全文在 [LICENSES/](LICENSES/)，每个文件头有 SPDX 标识：
+
+| 内容 | 许可 | 对你意味着 |
+| --- | --- | --- |
+| [`template/`](template/) 扩展模板 | MIT | 随便拷、闭源商用都行 |
+| [`docs/protocol.md`](docs/protocol.md) 协议文档、[`keysound/`](keysound/) 官方按键音 | MPL-2.0 | 自己写扩展不受约束；只有修改这些文件本身时，改动那部分要公开 |
+| 输入法仓里的 `wind-hook` 库 | MPL-2.0 | 同上 |
+
+各扩展附带素材的来源与许可见其目录下的说明（如 [keysound/packs/README.md](keysound/packs/README.md)）。

@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MPL-2.0
 //! 多声部混音（纯计算，Windows 后端在音频线程里调用）。
 //!
 //! PlaySound 同一时刻只放一个声音，新的一按就把上一个截断：截断处爆音，钢琴的余音也留不住。

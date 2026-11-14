@@ -1,12 +1,10 @@
-<!-- This Source Code Form is subject to the terms of the Mozilla Public
-   License, v. 2.0. If a copy of the MPL was not distributed with this
-   file, You can obtain one at https://mozilla.org/MPL/2.0/. -->
+<!-- SPDX-License-Identifier: MPL-2.0 -->
 
 # 扩展程序协议（v1）
 
 > 草案：协议未定版，字段仍可能调整。
 >
-> 本协议文档采用 MPL-2.0 许可（[LICENSE-MPL-2.0](LICENSE-MPL-2.0)），按协议另写实现不受本仓 GPL 约束；对本文档本身的修改需按 MPL 公开。
+> 本协议文档采用 MPL-2.0 许可（[全文](../LICENSES/MPL-2.0.txt)）：按协议另写实现不受任何约束，只有修改本文档本身时，改动部分要公开。
 
 清风输入法把输入过程中的事件（按键、上屏、模式）**单向、异步**投递给扩展程序。扩展只能
 旁观，不能改变上屏结果；扩展崩溃、卡死、处理慢，都不影响打字。
@@ -237,5 +235,5 @@ want = ["key.class"]
 protocol = [1]
 ```
 
-Rust 写的扩展可以直接依赖 WindInput 仓里的 `wind-hook` crate（消息定义与帧读写），参考
-本仓的 `keysound`。
+可直接复制本仓 [`template/python`](../template/python) 起步（MIT，闭源也可以）。Rust 写的扩展可以依赖
+WindInput 仓里的 `wind-hook` crate（消息定义与帧读写，MPL-2.0），参考本仓的 `keysound`。

@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MPL-2.0
 //! Windows 主播放后端：WASAPI 共享模式、事件驱动。
 //!
 //! waveOut 是老接口，在系统里要再转一层才到音频引擎；按键音要低延迟、缓冲给得小，每次输出流

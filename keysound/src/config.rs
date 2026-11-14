@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MPL-2.0
 //! `keysound.toml`（扩展目录内），改了即时生效（下一次按键时发现文件变了就重读）。
 //!
 //! 音色与音量也是扩展选项（见 extension.toml 的 `[[option]]`），在设置端改；设置端下发的值

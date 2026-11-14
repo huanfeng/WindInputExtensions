@@ -5,7 +5,7 @@ members = ["keysound"]
 [workspace.package]
 version = "0.1.0"
 edition = "2024"
-license = "GPL-3.0-or-later"
+license = "MPL-2.0"
 
 [workspace.dependencies]
 # 协议的消息与帧定义，与输入法核心共用一份。开发期按平级目录引用 WindInput 仓。

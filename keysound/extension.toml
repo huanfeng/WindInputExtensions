@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MPL-2.0
 name = "按键音"
 exe = { windows = "keysound.exe", linux = "keysound", macos = "keysound" }
 want = ["key.detail"]
