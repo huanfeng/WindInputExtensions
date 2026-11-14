@@ -160,7 +160,7 @@ step = 0.05
 
 | 字段 | 说明 |
 |---|---|
-| `source` | `candidate`（选词上屏）、`punct`（标点或其他 ASCII 文本）、`command`（命令、鼠标点选等） |
+| `source` | `candidate`（选词上屏）、`punct`（标点或其他 ASCII 文本）、`command`（命令、鼠标点选等）、`softkeyboard`（鼠标点软键盘键帽） |
 | `rect` | 预留：组合矩形 `[x, y, w, h]`（屏幕物理像素），v1 不提供 |
 
 ## 6. 选项
