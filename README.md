@@ -46,5 +46,5 @@ extensions/keysound/
 
 ## 许可
 
-GPL-3.0-or-later，见 [LICENSE](LICENSE)。各扩展附带素材的来源与许可见其目录下的说明
+GPL-3.0-or-later，见 [LICENSE](LICENSE)。**例外：扩展程序协议文档 [docs/protocol.md](docs/protocol.md) 采用 MPL-2.0**，见 [docs/LICENSE-MPL-2.0](docs/LICENSE-MPL-2.0)。各扩展附带素材的来源与许可见其目录下的说明
 （如 [keysound/packs/README.md](keysound/packs/README.md)）。

@@ -1,6 +1,12 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   License, v. 2.0. If a copy of the MPL was not distributed with this
+   file, You can obtain one at https://mozilla.org/MPL/2.0/. -->
+
 # 扩展程序协议（v1）
 
 > 草案：协议未定版，字段仍可能调整。
+>
+> 本协议文档采用 MPL-2.0 许可（[LICENSE-MPL-2.0](LICENSE-MPL-2.0)），按协议另写实现不受本仓 GPL 约束；对本文档本身的修改需按 MPL 公开。
 
 清风输入法把输入过程中的事件（按键、上屏、模式）**单向、异步**投递给扩展程序。扩展只能
 旁观，不能改变上屏结果；扩展崩溃、卡死、处理慢，都不影响打字。
