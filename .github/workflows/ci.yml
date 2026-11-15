@@ -1,0 +1,66 @@
+name: CI
+
+# 扩展依赖输入法仓里的 wind-hook（协议的消息与帧定义），Cargo.toml 里按平级目录引用
+# `../WindInput/wind_input/crates/wind-hook`，所以这里要把两个仓检出成平级目录。
+# wind-hook 用 `version.workspace` / `lints.workspace`，要连同 wind_input/Cargo.toml 一起拿。
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  check:
+    name: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        # 扩展 v1 只发 Windows，但代码里有非 Windows 分支，Linux 上至少要保证能编译。
+        os: [windows-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          path: WindInputExtensions
+
+      - uses: actions/checkout@v7
+        with:
+          repository: huanfeng/WindInput
+          path: WindInput
+          sparse-checkout: |
+            wind_input/Cargo.toml
+            wind_input/crates/wind-hook
+          sparse-checkout-cone-mode: false
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: WindInputExtensions
+
+      - name: 格式
+        working-directory: WindInputExtensions
+        run: cargo fmt -- --check
+
+      - name: clippy
+        working-directory: WindInputExtensions
+        run: cargo clippy --all-targets -- -D warnings
+
+      - name: 测试
+        working-directory: WindInputExtensions
+        run: cargo test
+
+  template:
+    name: Python 模板
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: 握手帧与按键事件
+        run: python3 template/python/test_template.py

@@ -28,7 +28,11 @@ cargo xwin build --release --target x86_64-pc-windows-msvc
 
 ## 安装
 
-把扩展目录放到用户目录的 `extensions/<id>/` 下（Windows：`%APPDATA%\WindInput\extensions\`），
+**下载现成的包**：到 [Releases](https://github.com/huanfeng/WindInputExtensions/releases) 下载
+`keysound-<版本>-windows-x64.zip`（旁边有 `.sha256` 校验文件），整个 `keysound` 文件夹解压到
+`%APPDATA%\WindInput\extensions\` 下。包暂未签名，杀毒软件可能误报。
+
+**或自己构建后**，把扩展目录放到用户目录的 `extensions/<id>/` 下（Windows：`%APPDATA%\WindInput\extensions\`），
 例如按键音：
 
 ```text
@@ -43,6 +47,12 @@ extensions/keysound/
 
 > ⚠️ 扩展程序能收到你授权的按键、上屏文字等输入内容。输入法只负责转发，不审查扩展程序的来源和
 > 行为。只安装、启用你信任的扩展程序。
+
+## 发布
+
+推送形如 `keysound-v0.1.0` 的 tag 触发 [release 工作流](.github/workflows/release.yml)：校验 tag 与
+`Cargo.toml` 版本一致，构建 Windows 包，把 zip 与 `.sha256` 挂到同名 Release（带 `-` 的版本号标为预发布）。
+日常提交与 PR 跑 [CI](.github/workflows/ci.yml)：格式、clippy、测试（Windows 与 Linux），以及 Python 模板的冒烟测试。
 
 ## 许可
 
